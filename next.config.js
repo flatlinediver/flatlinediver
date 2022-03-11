@@ -3,23 +3,14 @@ module.exports = {
   reactStrictMode: true,
   "headers": [
     {
-      "source": "/demos/:demo",
+      "source": "/:path*",
       "headers" : [
         {
           "key" : "from-home",
           "value" : "true"
         }
       ]
-    },
-    {
-      "source": "/demos/:demo/:resources*",
-      "headers" : [
-        {
-          "key" : "from-home",
-          "value" : "true"
-        }
-      ]
-    },
+    }
   ],
   async rewrites() {
     return {
