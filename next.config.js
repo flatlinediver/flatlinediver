@@ -7,7 +7,7 @@ module.exports = {
         "source": "/:path*",
         "headers" : [
           {
-            "key" : ":vercel-home",
+            "key" : "home",
             "value" : "true"
           }
         ]
