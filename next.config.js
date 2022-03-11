@@ -4,10 +4,19 @@ module.exports = {
   async headers() {
     return [
       {
-        "source": "/:path*",
+        "source": "/demos/:demo",
         "headers" : [
           {
-            "key" : "from-home",
+            "key" : ":vercel-home",
+            "value" : "true"
+          }
+        ]
+      },
+      {
+        "source": "/demos/:demo/:resources*",
+        "headers" : [
+          {
+            "key" : ":vercel-home",
             "value" : "true"
           }
         ]
