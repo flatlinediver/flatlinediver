@@ -1,17 +1,19 @@
 // next.config.js
 module.exports = {
   reactStrictMode: true,
-  "headers": [
-    {
-      "source": "/:path*",
-      "headers" : [
-        {
-          "key" : "from-home",
-          "value" : "true"
-        }
-      ]
-    }
-  ],
+  async headers() {
+    return [
+      {
+        "source": "/:path*",
+        "headers" : [
+          {
+            "key" : "from-home",
+            "value" : "true"
+          }
+        ]
+      }
+    ]
+  },
   async rewrites() {
     return {
       beforeFiles: [
