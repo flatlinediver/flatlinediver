@@ -1,7 +1,14 @@
 // next.config.js
 module.exports = {
-  images: {
-    domains: ['images.ctfassets.net'],
-    minimumCacheTTL: 31536000,
-  }
+  reactStrictMode: true,
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          "source": "/demos/:demo",
+          "destination": "https://www.:demo.flatlinediver.com"
+        }
+      ]
+    }
+  },
 }
