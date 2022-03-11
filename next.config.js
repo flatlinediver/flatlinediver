@@ -7,7 +7,7 @@ module.exports = {
         "source": "/demos/:demo",
         "headers" : [
           {
-            "key" : ":vercel-home",
+            "key" : "from-home",
             "value" : "true"
           }
         ]
@@ -16,7 +16,7 @@ module.exports = {
         "source": "/demos/:demo/:resources*",
         "headers" : [
           {
-            "key" : ":vercel-home",
+            "key" : "from-home",
             "value" : "true"
           }
         ]
