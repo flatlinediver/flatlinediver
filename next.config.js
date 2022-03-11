@@ -6,7 +6,7 @@ module.exports = {
       beforeFiles: [
         {
           "source": "/demos/:demo",
-          "destination": "https://www.:demo.flatlinediver.com",
+          "destination": "https://www.:demo.flatlinediver.com/",
         },
         {
           "source": "/demos/:demo/:resources*",
