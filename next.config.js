@@ -5,10 +5,10 @@ module.exports = {
     return [
       {
         "source": "/:path*",
-        "headers" : [
+        "headers": [
           {
-            "key" : "home",
-            "value" : "true"
+            "key": "home",
+            "value": "true"
           }
         ]
       }
