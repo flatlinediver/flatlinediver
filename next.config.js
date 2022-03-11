@@ -7,7 +7,6 @@ module.exports = {
         {
           "source": "/demos/:demo/:resources*",
           "destination": "https://www.:demo.flatlinediver.com/:resources*",
-          basePath: "https://www.:demo.flatlinediver.com/",
         }
       ]
     }
