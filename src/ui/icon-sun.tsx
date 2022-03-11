@@ -1,0 +1,99 @@
+import React, { FC } from 'react';
+import { useTheme } from 'styled-components';
+
+export const IconSun: FC = () => {
+  const { palette } = useTheme();
+  return (
+    <svg aria-hidden="true" viewBox="0 0 64 64" focusable="false">
+      <circle className="cls-1" cx="32" cy="32" r="17" fill={palette.text} />
+      <line
+        className="cls-2"
+        x1="32"
+        x2="32"
+        y1="5"
+        y2="11"
+        stroke={palette.text}
+        strokeLinecap="round"
+        strokeMiterlimit="10"
+        strokeWidth="3px"
+      />
+      <line
+        className="cls-2"
+        x1="32"
+        x2="32"
+        y1="53"
+        y2="59"
+        stroke={palette.text}
+        strokeLinecap="round"
+        strokeMiterlimit="10"
+        strokeWidth="3px"
+      />
+      <line
+        className="cls-2"
+        x1="59"
+        x2="53"
+        y1="32"
+        y2="32"
+        stroke={palette.text}
+        strokeLinecap="round"
+        strokeMiterlimit="10"
+        strokeWidth="3px"
+      />
+      <line
+        className="cls-2"
+        x1="11"
+        x2="5"
+        y1="32"
+        y2="32"
+        stroke={palette.text}
+        strokeLinecap="round"
+        strokeMiterlimit="10"
+        strokeWidth="3px"
+      />
+      <line
+        className="cls-2"
+        x1="51.09"
+        x2="46.85"
+        y1="12.91"
+        y2="17.15"
+        stroke={palette.text}
+        strokeLinecap="round"
+        strokeMiterlimit="10"
+        strokeWidth="3px"
+      />
+      <line
+        className="cls-2"
+        x1="17.15"
+        x2="12.91"
+        y1="46.85"
+        y2="51.09"
+        stroke={palette.text}
+        strokeLinecap="round"
+        strokeMiterlimit="10"
+        strokeWidth="3px"
+      />
+      <line
+        className="cls-2"
+        x1="51.09"
+        x2="46.85"
+        y1="51.09"
+        y2="46.85"
+        stroke={palette.text}
+        strokeLinecap="round"
+        strokeMiterlimit="10"
+        strokeWidth="3px"
+      />
+      <line
+        className="cls-2"
+        x1="17.15"
+        x2="12.91"
+        y1="17.15"
+        y2="12.91"
+        stroke={palette.text}
+        strokeLinecap="round"
+        strokeMiterlimit="10"
+        strokeWidth="3px"
+      />
+    </svg>
+  );
+};
