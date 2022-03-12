@@ -29,6 +29,9 @@ const GlobalStyle = createGlobalStyle`
   h3 {
     font-size: 1rem;
     margin: 1rem 0;
+    font-style: italic;
+    display: flex;
+    align-items: center;
   }
   p {
     line-height: 1.5;

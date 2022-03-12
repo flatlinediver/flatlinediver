@@ -11,5 +11,5 @@ const Span = styled.span`
 `;
 
 export const TagPrefix: FC = ({ children }) => {
-  return <Span>{children}</Span>;
+  return <Span aria-hidden="true">{children}</Span>;
 };

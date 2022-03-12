@@ -11,6 +11,7 @@ import {
   RiParagraph,
   RiListUnordered,
 } from 'react-icons/ri';
+import { BiCheckDouble } from 'react-icons/bi';
 import styled from 'styled-components';
 import { TagPrefix } from '@ui/tag-prefix';
 
@@ -79,7 +80,7 @@ const Home = () => (
         <TagPrefix>
           <RiH3 />
         </TagPrefix>
-        see you there
+        <span>see you there</span> <BiCheckDouble style={{ marginLeft: `.5rem` }} />
       </h3>
     </div>
   </PageWrapper>
