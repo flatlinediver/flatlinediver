@@ -4,30 +4,25 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 const baseColors = {
-  grey: {
-    dark: `#1d1d1d`,
-    light: `hsl(0, 0%, 100%)`,
-  },
-  blue: {
-    dark: `hsl(226, 23%, 11%)`,
-    light: `#2b79a2`,
-  },
-  orange: `#de935f`,
+  grey: `#3d3d3d`,
+  desert: `#de935f`,
+  blue: `hsl(226, 23%, 11%)`,
+  gold: { light: `#ebbe9e`, dark: `#c76a29` },
 } as const;
 
 const palettes = {
   light: {
     palette: {
-      text: baseColors.grey.dark,
-      bg: baseColors.grey.light,
-      link: baseColors.blue.light,
+      text: baseColors.grey,
+      bg: baseColors.desert,
+      link: baseColors.gold.light,
     },
   },
   dark: {
     palette: {
-      text: baseColors.grey.light,
-      bg: baseColors.blue.dark,
-      link: baseColors.orange,
+      text: baseColors.desert,
+      bg: baseColors.blue,
+      link: baseColors.gold.dark,
     },
   },
 };

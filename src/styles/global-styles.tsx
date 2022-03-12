@@ -14,14 +14,17 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.palette.text};
     background-color: ${({ theme }) => theme.palette.bg};
     font-family: 'Poppins';
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+  h1, h2, h3, p, ul {
+    position: relative;
   }
   h1 {
     margin-bottom: 1rem;
   }
   h2 {
     font-size: 1.6rem;
-    margin: 2rem 0 .5rem;
+    margin: 2rem 0 2rem;
   }
   h3 {
     font-size: 1rem;
@@ -30,84 +33,84 @@ const GlobalStyle = createGlobalStyle`
   p {
     line-height: 1.5;
     margin: .3rem 0;
-    max-width: 400px;
+    max-width: 350px;
+  }
+  ul {
+    display: flex;
+  }
+  li {
+    list-style: none;
+    margin: 0 1rem 0 0;
+    &:last-of-type: {
+      margin: 0;
+    }
   }
   a{
     color: ${({ theme }) => theme.palette.link};
-    margin: 0 0 0 .3rem;
     text-decoration: none;
-    position: relative;
     background-color: transparent;
-    transition:${({ theme }) => theme.transition(`background-color`, `200ms`)};
     border-radius: .3rem;
+    font-size: 1.5rem;
     svg {
-      transition:${({ theme }) => theme.transition(`transform`, `200ms`)};
-      outline: none;  
-    }
-    &:before {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      left: 0;
-      top: calc(100% + .2rem);
-      background-color: ${({ theme }) => theme.palette.link};
+      transition: ${({ theme }) => theme.transition(`transform`)};
     }
     &:hover {
+      cursor: pointer;
       svg {
-        transform: translateX(-.2rem);
+        transform: scale(1.2) rotate(10deg);
       }
-      background-color: ${({ theme }) => theme.palette.link}1A;
     }
   }
-  a:hover, button:hover {
-    cursor: pointer;
+  a:focus {
+    border: none;
+    outline-color: ${({ theme }) => theme.palette.link};
+    &:before {
+      display: none;
+    }
   }
-  button, textarea, a {
+  button {
+    background: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 30px;
+    height: 30px;
+    padding: 0.2rem;
+    transition: ${({ theme }) => theme.transition(`transform`)};
+    font-size: 1.5rem;
+    color: ${({ theme }) => theme.palette.text};
+  }
+  button:hover {
+    cursor: pointer;
+    transform: scale(1.2) rotate(10deg);
+  }
+  button:focus {
+    outline-color: ${({ theme }) => theme.palette.text};
+    border-radius: .3rem;
+  }
+  button, a {
     border: none;
     outline-width: 1px;
     outline-style: solid;
     outline-offset: 3px;
     outline-color: transparent;
   }
-  button:focus {
-    outline-color: ${({ theme }) => theme.palette.text};
-    border-radius: .3rem;
-  }
-  a:focus {
-    &:before {
-      display: none;
-    }
-    border: none;
-    outline-color: ${({ theme }) => theme.palette.link};
-  }
   button:focus:not(:focus-visible), a:focus:not(:focus-visible) {
     outline-color: transparent;
   }
-  dt {
-    margin-right: .3rem;
-  }
-  dt, dd {
-    display: inline;
-    font-size: 1rem;
-  }
-  dl div {
-    margin: .5rem 0;
-  }
   hr {
-    margin: 1.5rem 0;
     opacity: .2;
+    margin: 1.5rem 0;
+    border: 1px solid ${({ theme }) => theme.palette.text};
   }
-  .wrapper {
-    display: flex;
-    width: 100vw;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 2rem;
-    position: relative;
+  .visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
   }
 
   @media (prefers-reduced-motion: reduce) {

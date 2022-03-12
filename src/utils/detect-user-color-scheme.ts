@@ -5,12 +5,14 @@ export const detectUserColorScheme = () => {
     if (lsMode) return lsMode;
   }
 
-  if (
-    typeof window !== 'undefined' &&
-    window?.matchMedia?.(`(prefers-color-scheme: dark)`)?.matches === true
-  ) {
-    return `dark`;
+  if (typeof window !== 'undefined') {
+    if (window?.matchMedia?.(`(prefers-color-scheme: dark)`)?.matches === true) {
+      return `dark`;
+    }
+    if (window?.matchMedia?.(`(prefers-color-scheme: light)`)?.matches === true) {
+      return `light`;
+    }
   }
 
-  return `light`;
+  return `dark`;
 };
