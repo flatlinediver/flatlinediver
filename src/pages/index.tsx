@@ -14,6 +14,7 @@ import {
 import { BiCheckDouble } from 'react-icons/bi';
 import styled from 'styled-components';
 import { TagPrefix } from '@ui/tag-prefix';
+import Head from 'next/head';
 
 const PageWrapper = styled.main`
   display: flex;
@@ -28,6 +29,9 @@ const PageWrapper = styled.main`
 
 const Home = () => (
   <PageWrapper>
+    <Head>
+      <title>Flatlinediver</title>
+    </Head>
     <ThemeToggle />
     <div>
       <h1>
