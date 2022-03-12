@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins';
     font-size: 1rem;
   }
-  h1, h2, h3, p, ul {
+  h1, h2, h3, p, ul, a, button {
     position: relative;
   }
   h1 {
@@ -44,25 +44,21 @@ const GlobalStyle = createGlobalStyle`
   li {
     list-style: none;
     margin: 0 1rem 0 0;
+    display: flex;
     &:last-of-type: {
       margin: 0;
     }
   }
   a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: ${({ theme }) => theme.palette.link};
     text-decoration: none;
     background-color: transparent;
     border-radius: .3rem;
     font-size: 1.5rem;
-    svg {
-      transition: ${({ theme }) => theme.transition(`transform`)};
-    }
-    &:hover {
-      cursor: pointer;
-      svg {
-        transform: scale(1.2) rotate(10deg);
-      }
-    }
+    cursor: pointer;
   }
   a:focus {
     border: none;
@@ -82,10 +78,7 @@ const GlobalStyle = createGlobalStyle`
     transition: ${({ theme }) => theme.transition(`transform`)};
     font-size: 1.5rem;
     color: ${({ theme }) => theme.palette.text};
-  }
-  button:hover {
     cursor: pointer;
-    transform: scale(1.2) rotate(10deg);
   }
   button:focus {
     outline-color: ${({ theme }) => theme.palette.text};
@@ -100,6 +93,28 @@ const GlobalStyle = createGlobalStyle`
   }
   button:focus:not(:focus-visible), a:focus:not(:focus-visible) {
     outline-color: transparent;
+  }
+  a, button {
+    :before {
+      transition:${({ theme }) => theme.transition(`opacity`)};
+      position: absolute;
+      content: '';
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      opacity: 0;
+      background: ${({ theme }) => theme.palette.text};
+      border-radius: 50%;
+      z-index: -1;
+    }
+    &:hover {
+      &:before {
+        opacity: .2;
+      }
+    }
   }
   hr {
     opacity: .2;
