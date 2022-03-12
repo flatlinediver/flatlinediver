@@ -7,13 +7,13 @@ export const ThemeToggle: FC = () => {
   const { mode, toggleMode } = useThemeMode();
   const shouldReduceMotion = useReducedMotion();
   const controls = useAnimation();
-  const initial = { rotate: mode === `light` ? 360 : 0 };
+  const initial = { rotate: 0 };
   const ifShould = (obj = {}) => (shouldReduceMotion ? { type: false } : obj);
 
   useEffect(() => {
     controls.start({
       opacity: 1,
-      rotate: mode === `light` ? 360 : 0,
+      rotate: mode === `light` ? -360 : 360,
       transition: ifShould({ type: 'spring', stiffness: 100 }),
     });
   }, [mode]);
