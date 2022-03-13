@@ -9,6 +9,12 @@ const Span = styled.span<{ offset?: string }>`
   font-size: 0.75rem;
   color: ${({ theme }) => theme.palette.text};
   opacity: 0.75;
+  @media (max-width: 24rem) {
+    right: calc(100% - 0.5rem);
+  }
+  @media (max-width: 375px) {
+    right: calc(100% - 0.8rem);
+  }
 `;
 
 export const TagPrefix: FC<{ offset?: string }> = ({ children, offset }) => {

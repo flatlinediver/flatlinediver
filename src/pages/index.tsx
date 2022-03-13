@@ -14,6 +14,7 @@ import { BiCheckDouble } from 'react-icons/bi';
 import { ThemeToggle } from '@ui/theme-toggle';
 import { CustomLink } from '@ui/custom-link';
 import { TagPrefix } from '@ui/tag-prefix';
+import { IconFlatlinediverLogo } from '@ui/icon-flatlinediver-logo';
 
 const Home = () => (
   <>
@@ -23,6 +24,7 @@ const Home = () => (
     <header>
       <ThemeToggle />
     </header>
+    <IconFlatlinediverLogo />
     <main>
       <h1>
         <TagPrefix>

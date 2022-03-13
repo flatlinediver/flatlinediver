@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 3rem 3rem 0;
+    margin: 3rem 0 0;
   }
   h1, section, hr, footer {
     width: 100%;
@@ -63,7 +63,7 @@ const GlobalStyle = createGlobalStyle`
   footer {
     width: 100vw;
     max-width: 330px;
-    margin: 1.3rem 3rem;
+    margin: 1.3rem 0;
   }
   p {
     line-height: 1.5;
@@ -152,6 +152,17 @@ const GlobalStyle = createGlobalStyle`
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap; /* added line */
+  }
+  h1, h2, p, ul, footer {
+    @media (max-width: 24rem) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  hr {
+    @media (max-width: 24rem) {
+      width: calc(100% - 2rem);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
