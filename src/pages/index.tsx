@@ -43,7 +43,7 @@ const Home = () => (
           <TagPrefix>
             <RiParagraph />
           </TagPrefix>
-          <span> I host my demos and side projects here.</span>
+          <span> Here I host my demos and side projects for now.</span>
         </p>
       </section>
       <hr />
