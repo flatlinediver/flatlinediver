@@ -56,8 +56,8 @@ const GlobalStyle = createGlobalStyle`
   }
   header {
     position: fixed;
-    top: .3rem;
-    right: .3rem;
+    top: 1rem;
+    right: 1rem;
     z-index: 999;
   }
   footer {
