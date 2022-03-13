@@ -1,10 +1,8 @@
-import {} from 'styled-components';
 import { CSSProp } from 'styled-components';
 import { theme } from './theme';
 
 declare module 'styled-components' {
-  type Theme = ReturnType<typeof theme>;
-  export interface DefaultTheme extends Theme {}
+  export interface DefaultTheme extends ReturnType<typeof theme> {}
 }
 
 declare module 'react' {
