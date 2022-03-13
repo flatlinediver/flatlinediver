@@ -44,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
     margin-bottom: 1rem;
   }
   hr {
-    opacity: .2;
+    opacity: .1;
     border: 1px solid ${({ theme }) => theme.palette.text};
   }
   section {
