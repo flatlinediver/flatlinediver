@@ -6,9 +6,6 @@
       "@hooks/*": [
         "src/hooks/*"
       ],
-      "@helpers/*": [
-        "src/helpers/*"
-      ],
       "@utils/*": [
         "src/utils/*"
       ],
@@ -20,9 +17,6 @@
       ],
       "@context/*": [
         "src/context/*"
-      ],
-      "@services/*": [
-        "src/services/*"
       ],
     },
     "lib": [

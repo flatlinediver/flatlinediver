@@ -1,22 +1,22 @@
 import React from 'react';
-import { ThemeToggle } from '@ui/theme-toggle';
-import { CustomLink } from '@ui/custom-link';
+import Head from 'next/head';
+import styled from 'styled-components';
 import {
   RiTwitterFill,
   RiGithubFill,
   RiMailOpenFill,
   RiH1,
   RiH2,
-  RiH3,
   RiParagraph,
   RiListUnordered,
 } from 'react-icons/ri';
+import { CgRowLast } from 'react-icons/cg';
 import { BiCheckDouble } from 'react-icons/bi';
-import styled from 'styled-components';
+import { ThemeToggle } from '@ui/theme-toggle';
+import { CustomLink } from '@ui/custom-link';
 import { TagPrefix } from '@ui/tag-prefix';
-import Head from 'next/head';
 
-const PageWrapper = styled.main`
+const Main = styled.main`
   display: flex;
   width: 100vw;
   min-height: 100vh;
@@ -28,66 +28,72 @@ const PageWrapper = styled.main`
 `;
 
 const Home = () => (
-  <PageWrapper>
+  <>
     <Head>
       <title>Flatlinediver</title>
     </Head>
-    <ThemeToggle />
-    <div>
+    <header>
+      <ThemeToggle />
+    </header>
+    <Main>
       <h1>
         <TagPrefix>
           <RiH1 />
         </TagPrefix>
-        hi, I&#39;m Eric
+        Hi, I&#39;m Eric
       </h1>
-      <p>
-        <TagPrefix>
-          <RiParagraph />
-        </TagPrefix>
-        a web/app developer from Argentina, based in Georgia
-      </p>
-      <p>
-        <TagPrefix>
-          <RiParagraph />
-        </TagPrefix>
-        <span> I host my demos and side projects here</span>
-      </p>
+      <section>
+        <p>
+          <TagPrefix>
+            <RiParagraph />
+          </TagPrefix>
+          A web/app developer from Argentina, now based in Georgia.
+        </p>
+        <p>
+          <TagPrefix>
+            <RiParagraph />
+          </TagPrefix>
+          <span> I host my demos and side projects here.</span>
+        </p>
+      </section>
       <hr />
-      <h2>
-        <TagPrefix>
-          <RiH2 />
-        </TagPrefix>
-        you can reach me on...
-      </h2>
-      <ul>
-        <TagPrefix>
-          <RiListUnordered />
-        </TagPrefix>
-        <li>
-          <CustomLink external href={`https://twitter.com/flatlinediver`} label={`Twitter`}>
-            <RiTwitterFill />
-          </CustomLink>
-        </li>
-        <li>
-          <CustomLink external href={`http://github.com/flatlinediver`} label={`Github`}>
-            <RiGithubFill />
-          </CustomLink>
-        </li>
-        <li>
-          <CustomLink external href={`mailto:contact@flatlinediver.com`} label={`Mail`}>
-            <RiMailOpenFill />
-          </CustomLink>
-        </li>
-      </ul>
+      <section>
+        <h2>
+          <TagPrefix>
+            <RiH2 />
+          </TagPrefix>
+          You can reach me on...
+        </h2>
+        <ul>
+          <TagPrefix>
+            <RiListUnordered />
+          </TagPrefix>
+          <li>
+            <CustomLink external href={`https://twitter.com/flatlinediver`} label={`Twitter`}>
+              <RiTwitterFill />
+            </CustomLink>
+          </li>
+          <li>
+            <CustomLink external href={`http://github.com/flatlinediver`} label={`Github`}>
+              <RiGithubFill />
+            </CustomLink>
+          </li>
+          <li>
+            <CustomLink external href={`mailto:contact@flatlinediver.com`} label={`Mail`}>
+              <RiMailOpenFill />
+            </CustomLink>
+          </li>
+        </ul>
+      </section>
       <hr />
-      <h3>
-        <TagPrefix>
-          <RiH3 />
+      <footer>
+        <TagPrefix offset={`.2rem`}>
+          <CgRowLast size={18} />
         </TagPrefix>
-        <span>see you there</span> <BiCheckDouble style={{ marginLeft: `.5rem` }} />
-      </h3>
-    </div>
-  </PageWrapper>
+        <span>See you there</span> <BiCheckDouble style={{ marginLeft: `.5rem` }} />
+      </footer>
+    </Main>
+  </>
 );
 
 export default Home;

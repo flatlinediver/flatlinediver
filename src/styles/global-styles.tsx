@@ -16,27 +16,43 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins';
     font-size: 1rem;
   }
-  h1, h2, h3, p, ul, a, button {
+  h1, section, hr, footer {
+    width: 100%;
+    max-width: 330px;
+  }
+  h1, h2, p, ul, a, button, footer {
     position: relative;
   }
   h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
   }
   h2 {
-    font-size: 1.6rem;
-    margin: 2rem 0 2rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
   }
-  h3 {
-    font-size: 1rem;
-    margin: 1rem 0;
-    font-style: italic;
+  hr {
+    opacity: .2;
+    border: 1px solid ${({ theme }) => theme.palette.text};
+  }
+  section {
+    margin: 1.3rem 0;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  header {
+    position: fixed;
+    top: .3rem;
+    right: .3rem;
+    z-index: 999;
+  }
+  footer {
+    margin-top: 1.3rem;
   }
   p {
     line-height: 1.5;
-    margin: .3rem 0;
-    max-width: 350px;
+    margin: .6rem 0;
   }
   ul {
     display: flex;
@@ -69,9 +85,6 @@ const GlobalStyle = createGlobalStyle`
   }
   button {
     background: none;
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
     width: 30px;
     height: 30px;
     padding: 0.2rem;
@@ -115,11 +128,6 @@ const GlobalStyle = createGlobalStyle`
         opacity: .2;
       }
     }
-  }
-  hr {
-    opacity: .2;
-    margin: 1.5rem 0;
-    border: 1px solid ${({ theme }) => theme.palette.text};
   }
   .visually-hidden {
     position: absolute !important;
