@@ -13,7 +13,7 @@ export const CustomLink: FC<LinkProps & { label: string; external?: boolean }> =
         rel: `noreferrer`,
         'aria-label': `${label} (opens in new window)`,
       }
-    : {};
+    : { 'aria-label': `${label}` };
 
   return (
     <Link {...props}>

@@ -40,11 +40,7 @@ export const PageInitializerProvider: FC = ({ children }) => {
 
   return (
     <PageInitializer.Provider value={{ pageStatus }}>
-      {dom === 'LOADING' ? null : (
-        <>
-          <main>{children}</main>
-        </>
-      )}
+      {dom === 'LOADING' ? null : <>{children}</>}
     </PageInitializer.Provider>
   );
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import styled from 'styled-components';
 import {
   RiTwitterFill,
   RiGithubFill,
@@ -16,17 +15,6 @@ import { ThemeToggle } from '@ui/theme-toggle';
 import { CustomLink } from '@ui/custom-link';
 import { TagPrefix } from '@ui/tag-prefix';
 
-const Main = styled.main`
-  display: flex;
-  width: 100vw;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 3rem;
-  position: relative;
-`;
-
 const Home = () => (
   <>
     <Head>
@@ -35,7 +23,7 @@ const Home = () => (
     <header>
       <ThemeToggle />
     </header>
-    <Main>
+    <main>
       <h1>
         <TagPrefix>
           <RiH1 />
@@ -70,29 +58,30 @@ const Home = () => (
           </TagPrefix>
           <li>
             <CustomLink external href={`https://twitter.com/flatlinediver`} label={`Twitter`}>
-              <RiTwitterFill />
+              <RiTwitterFill aria-hidden="true" />
             </CustomLink>
           </li>
           <li>
             <CustomLink external href={`http://github.com/flatlinediver`} label={`Github`}>
-              <RiGithubFill />
+              <RiGithubFill aria-hidden="true" />
             </CustomLink>
           </li>
           <li>
             <CustomLink external href={`mailto:contact@flatlinediver.com`} label={`Mail`}>
-              <RiMailOpenFill />
+              <RiMailOpenFill aria-hidden="true" />
             </CustomLink>
           </li>
         </ul>
       </section>
       <hr />
-      <footer>
-        <TagPrefix offset={`.2rem`}>
-          <CgRowLast size={18} />
-        </TagPrefix>
-        <span>See you there</span> <BiCheckDouble style={{ marginLeft: `.5rem` }} />
-      </footer>
-    </Main>
+    </main>
+    <footer>
+      <TagPrefix offset={`.2rem`}>
+        <CgRowLast size={18} />
+      </TagPrefix>
+      <span>See you there</span>
+      <BiCheckDouble aria-hidden="true" style={{ marginLeft: `.5rem` }} />
+    </footer>
   </>
 );
 

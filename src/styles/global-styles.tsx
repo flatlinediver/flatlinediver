@@ -15,12 +15,25 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.palette.bg};
     font-family: 'Poppins';
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main {
+    display: flex;
+    width: 100vw;
+    max-width: 330px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3rem 3rem 0;
   }
   h1, section, hr, footer {
     width: 100%;
-    max-width: 330px;
   }
-  h1, h2, p, ul, a, button, footer {
+  h1, h2, p, ul, a, button, main, footer {
     position: relative;
   }
   h1 {
@@ -48,7 +61,9 @@ const GlobalStyle = createGlobalStyle`
     z-index: 999;
   }
   footer {
-    margin-top: 1.3rem;
+    width: 100vw;
+    max-width: 330px;
+    margin: 1.3rem 3rem;
   }
   p {
     line-height: 1.5;
