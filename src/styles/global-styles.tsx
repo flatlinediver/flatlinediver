@@ -72,6 +72,9 @@ const GlobalStyle = createGlobalStyle`
   p {
     line-height: 1.5;
     margin: .6rem 0;
+    &:last-of-type {
+      margin: .6rem 0 0;
+    }
   }
   ul {
     display: flex;
