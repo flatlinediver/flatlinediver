@@ -37,18 +37,20 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
   }
   h1 {
+    font-size: 3rem;
     margin-bottom: 0;
   }
   h2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
   }
   hr {
     opacity: .1;
     border: 1px solid ${({ theme }) => theme.palette.text};
+    margin: 0 0 1.3rem;
   }
   section {
-    margin: 1.3rem 0;
+    margin: 0 0 1.3rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -61,9 +63,11 @@ const GlobalStyle = createGlobalStyle`
     z-index: 999;
   }
   footer {
+    font-size: .8rem;
     width: 100vw;
     max-width: 330px;
-    margin: 1.3rem 0;
+    margin: 0 0 1.3rem;
+    font-style: italic;
   }
   p {
     line-height: 1.5;
