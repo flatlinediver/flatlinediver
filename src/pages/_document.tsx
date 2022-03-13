@@ -33,7 +33,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="es">
+      <Html lang="en">
         <Head>
           <meta property="og:site_name" content={process.env.NEXT_PUBLIC_SITE_NAME} />
           <meta name="charset" content="UTF-8" />
