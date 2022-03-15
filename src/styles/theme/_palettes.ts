@@ -10,13 +10,13 @@ export const _palettes: Record<
   }
 > = {
   light: {
-    text: _baseColors.grey[300],
+    text: _baseColors.grey[400],
     bg: _baseColors.grey[100],
-    link: _baseColors.accent,
+    link: _baseColors.accent.dark,
   },
   dark: {
     text: _baseColors.grey[200],
     bg: _baseColors.grey[400],
-    link: _baseColors.accent,
+    link: _baseColors.accent.light,
   },
 } as const;
