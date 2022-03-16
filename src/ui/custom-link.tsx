@@ -8,6 +8,7 @@ const StyledLink = styled.a<StyledLinkProps>`
 `;
 
 interface LinkProps extends NextLinkProps, StyledLinkProps {
+  href: string;
   label: string;
   external?: boolean;
 }
@@ -23,7 +24,7 @@ export const Link: FC<LinkProps> = ({ label, external, children, asButton, color
 
   return (
     <NextLink {...rest}>
-      <StyledLink {...additionalProps} asButton={asButton} color={color}>
+      <StyledLink href={rest.href} {...additionalProps} asButton={asButton} color={color}>
         {children}
       </StyledLink>
     </NextLink>
