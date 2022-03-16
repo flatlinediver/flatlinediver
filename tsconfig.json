@@ -3,21 +3,7 @@
     "baseUrl": "./",
     "target": "es5",
     "paths": {
-      "@hooks/*": [
-        "src/hooks/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@ui/*": [
-        "src/ui/*"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
-      "@context/*": [
-        "src/context/*"
-      ],
+      "@*": ["./src/*"],
     },
     "lib": [
       "dom",
