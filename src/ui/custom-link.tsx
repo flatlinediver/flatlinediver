@@ -1,12 +1,18 @@
-import Link, { LinkProps } from 'next/link';
 import React, { FC } from 'react';
+import styled from 'styled-components';
+import NextLink, { LinkProps as NextLinkProps } from 'next/link';
+import { StyledLinkProps, linkStyles } from '@styles/common-styles';
 
-export const CustomLink: FC<LinkProps & { label: string; external?: boolean }> = ({
-  label,
-  external,
-  children,
-  ...props
-}) => {
+const StyledLink = styled.a<StyledLinkProps>`
+  ${({ color, asButton }) => linkStyles({ color, asButton })};
+`;
+
+interface LinkProps extends NextLinkProps, StyledLinkProps {
+  label: string;
+  external?: boolean;
+}
+
+export const Link: FC<LinkProps> = ({ label, external, children, asButton, color, ...rest }) => {
   const additionalProps = external
     ? {
         target: `_blank`,
@@ -16,10 +22,10 @@ export const CustomLink: FC<LinkProps & { label: string; external?: boolean }> =
     : { 'aria-label': `${label}` };
 
   return (
-    <Link {...props}>
-      <a target={`_blank`} rel={`noreferrer`} {...additionalProps}>
+    <NextLink {...rest}>
+      <StyledLink {...additionalProps} asButton={asButton} color={color}>
         {children}
-      </a>
-    </Link>
+      </StyledLink>
+    </NextLink>
   );
 };

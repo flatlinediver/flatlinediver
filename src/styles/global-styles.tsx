@@ -21,24 +21,13 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     min-height: 100vh;
   }
-  main {
-    display: flex;
-    width: 100vw;
-    max-width: 330px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 3rem 0 0;
-  }
-  h1, section, hr, footer {
-    width: 100%;
-  }
   h1, h2, p, ul, a, button, main, footer {
     position: relative;
   }
   h1 {
     font-size: 3rem;
     margin-bottom: 0;
+    width: 100%;
   }
   h2 {
     font-size: 1.6rem;
@@ -48,107 +37,21 @@ const GlobalStyle = createGlobalStyle`
     opacity: .1;
     border: 1px solid ${({ theme }) => theme.palette.text};
     margin: 0 0 1.3rem;
+    width: 100%;
   }
   section {
+    width: 100%;
     margin: 0 0 1.3rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
   }
-  header {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 999;
-  }
-  footer {
-    font-size: .8rem;
-    width: 100vw;
-    max-width: 330px;
-    margin: 0 0 1.3rem;
-    font-style: italic;
-  }
   p {
     line-height: 1.5;
     margin: .6rem 0;
     &:last-of-type {
       margin: .6rem 0 0;
-    }
-  }
-  ul {
-    display: flex;
-  }
-  li {
-    list-style: none;
-    margin: 0 1rem 0 0;
-    display: flex;
-    &:last-of-type: {
-      margin: 0;
-    }
-  }
-  a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: ${({ theme }) => theme.palette.link};
-    text-decoration: none;
-    background-color: transparent;
-    border-radius: .3rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  a:focus {
-    border: none;
-    outline-color: ${({ theme }) => theme.palette.link};
-    &:before {
-      display: none;
-    }
-  }
-  button {
-    background: none;
-    width: 30px;
-    height: 30px;
-    padding: 0.2rem;
-    transition: ${({ theme }) => theme.transition(`transform`)};
-    font-size: 1.5rem;
-    color: ${({ theme }) => theme.palette.text};
-    cursor: pointer;
-  }
-  button:focus {
-    outline-color: ${({ theme }) => theme.palette.text};
-    border-radius: .3rem;
-  }
-  button, a {
-    border: none;
-    outline-width: 1px;
-    outline-style: solid;
-    outline-offset: 3px;
-    outline-color: transparent;
-  }
-  button:focus:not(:focus-visible), a:focus:not(:focus-visible) {
-    outline-color: transparent;
-  }
-  a, button {
-    :before {
-      transition:${({ theme }) => theme.transition(`opacity`)};
-      position: absolute;
-      content: '';
-      display: block;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 120%;
-      height: 120%;
-      opacity: 0;
-      background: ${({ theme }) => theme.palette.text};
-      border-radius: 50%;
-      z-index: -1;
-    }
-    &:hover {
-      &:before {
-        opacity: .2;
-      }
     }
   }
   .visually-hidden {

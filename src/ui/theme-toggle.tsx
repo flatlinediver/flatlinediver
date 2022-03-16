@@ -2,6 +2,14 @@ import React, { FC, useEffect } from 'react';
 import { motion, useAnimation, useReducedMotion } from 'framer-motion';
 import { useThemeMode } from '@context/theme-mode';
 import { RiSunFill, RiMoonFill } from 'react-icons/ri';
+import styled from 'styled-components';
+import { Button } from '@ui/button';
+
+const Span = styled(motion.span)`
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+`;
 
 export const ThemeToggle: FC = () => {
   const { mode, toggleMode } = useThemeMode();
@@ -19,16 +27,17 @@ export const ThemeToggle: FC = () => {
   }, [mode]);
 
   return (
-    <motion.button
-      initial={initial}
-      animate={controls}
+    <Button
       onClick={() => toggleMode()}
       aria-label="Dark mode"
       role="switch"
       aria-checked={mode === 'dark'}
+      name="Dark mode"
     >
       <b className="visually-hidden">{mode === `light` ? `dark mode` : `Light mode`}</b>
-      {mode === `light` ? <RiSunFill /> : <RiMoonFill />}
-    </motion.button>
+      <Span initial={initial} animate={controls}>
+        {mode === `light` ? <RiSunFill /> : <RiMoonFill />}
+      </Span>
+    </Button>
   );
 };
