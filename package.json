@@ -10,7 +10,6 @@
     "start": "next start",
     "export": "next export",
     "lint": "eslint --ext ts,tsx --fix",
-    "codegen": "contentful-typescript-codegen --output src/app/externalModels/index.ts",
     "debug": "NODE_OPTIONS='--inspect' next dev",
     "prettier": "prettier --write '**/*.{ts,tsx}'"
   },
