@@ -28,9 +28,19 @@ module.exports = {
           "basePath": false
         },
         {
-          "source": "/demos/:path",
-          "destination": "https://:path.vercel-support.app/",
+          "source": "/demos/73360-react-router-motion-demo/:path*",
+          "destination": "https://73360-react-router-motion-demo.vercel-support.app/:path*",
+          // "basePath": false
+        },
+        {
+          "source": "/demos/73360-create-react-app/:path*",
+          "destination": "https://73360-create-react-app.vercel-support.app/:path*",
           "basePath": false
+        },
+        {
+          "source": "/g/:path*",
+          "destination": "https://bbi.studio",
+          // "basePath": false
         }
       ]
     }
