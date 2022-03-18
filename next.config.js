@@ -28,8 +28,8 @@ module.exports = {
           "basePath": false
         },
         {
-          "source": "/demos/:path*",
-          "destination": "https://:path*.vercel-support.app/",
+          "source": "/demos/:path",
+          "destination": "https://:path.vercel-support.app/",
           "basePath": false
         }
       ]
