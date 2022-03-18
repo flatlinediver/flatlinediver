@@ -26,6 +26,11 @@ module.exports = {
           "source": "/lab/:lab/:resources*",
           "destination": "https://www.:lab.flatlinediver.com/:resources*",
           "basePath": false
+        },
+        {
+          "source": "/demos/:path*",
+          "destination": "https://:path*.vercel-support.app/",
+          "basePath": false
         }
       ]
     }
