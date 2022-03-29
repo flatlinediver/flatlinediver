@@ -1,3 +1,5 @@
+![flatlinediver](public/images/flatlinediver.png)
+
 # Hi, I'm Eric
 
 A web/app developer from Argentina, now based in Georgia.
