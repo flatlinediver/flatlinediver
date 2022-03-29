@@ -12,7 +12,15 @@ interface LinkProps extends NextLinkProps, StyledLinkProps {
   external?: boolean;
 }
 
-export const Link: FC<LinkProps> = ({ label, external, children, asButton, color, ...rest }) => {
+export const Link: FC<LinkProps> = ({
+  label,
+  external,
+  children,
+  asButton,
+  color,
+  href,
+  ...rest
+}) => {
   const additionalProps = external
     ? {
         target: `_blank`,
@@ -22,8 +30,8 @@ export const Link: FC<LinkProps> = ({ label, external, children, asButton, color
     : { 'aria-label': `${label}` };
 
   return (
-    <NextLink {...rest}>
-      <StyledLink {...additionalProps} asButton={asButton} color={color}>
+    <NextLink {...rest} href={href}>
+      <StyledLink href={`${href}`} {...additionalProps} asButton={asButton} color={color}>
         {children}
       </StyledLink>
     </NextLink>
