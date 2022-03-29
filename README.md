@@ -6,7 +6,7 @@ A web/app developer from Argentina, now based in Georgia.
 
 Here I host demos and side projects for now.
 
-You can reach me on...
+## You can reach me on...
 
 [twitter](https://twitter.com/flatlinediver)
 
