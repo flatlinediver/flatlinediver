@@ -2,7 +2,7 @@ import React from 'react';
 import { getMDXComponent } from 'mdx-bundler/client';
 import styled from 'styled-components';
 import Image from 'next/image';
-import { HomeWrapper } from '@ui/homeWrapper';
+import { HomeWrapper } from '@ui/home-wrapper';
 import { TagPrefix } from '@ui/tag-prefix';
 import { Social, socialIcons } from '@ui/social';
 import { Link } from '@ui/custom-link';
