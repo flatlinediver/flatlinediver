@@ -1,24 +1,36 @@
 import React from 'react';
 import Head from 'next/head';
-import { IconFlatlinediverLogo } from '@ui/icon-flatlinediver-logo';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { bundlePage } from '@home-data/bundle-home';
+import { useMDXPage } from '@home-data/use-mdx-page';
 import { Header } from '@ui/header';
-import { Main } from '@ui/main';
-import { Footer } from '@ui/footer';
-import { Socials } from '@ui/socials';
+import { BackgroundGraphic } from '@ui/background-graphic';
 
-const Home = () => (
-  <>
-    <Head>
-      <title>Flatlinediver</title>
-    </Head>
-    <Header />
-    <IconFlatlinediverLogo />
-    <Main>
-      <Socials />
-      <hr />
-    </Main>
-    <Footer />
-  </>
-);
+const HomePage = ({
+  code,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { Component } = useMDXPage(code);
 
-export default Home;
+  return (
+    <>
+      <Head>
+        <title>{process.env.NEXT_PUBLIC_SITE_NAME}</title>
+      </Head>
+      <BackgroundGraphic />
+      <Header />
+      <Component />
+    </>
+  );
+};
+
+export const getStaticProps: GetStaticProps<{
+  code: string;
+}> = async () => {
+  const props = await bundlePage();
+
+  return {
+    props,
+  };
+};
+
+export default HomePage;

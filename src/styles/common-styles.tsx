@@ -112,17 +112,24 @@ const buttonStates = css`
   }
 `;
 
-export const linkStyles = ({ color, asButton }: StyledLinkProps) => css`
+export const linkStyles = ({
+  color,
+  asButton,
+}: StyledLinkProps) => css`
   ${mainElementBase};
-  ${asButton ? buttonHoverElement({ color }) : linkHoverElement({ color })};
-  ${({ theme }) => focusElement({ color: color ?? theme.palette.link })};
+  ${asButton
+    ? buttonHoverElement({ color })
+    : linkHoverElement({ color })};
+  ${({ theme }) =>
+    focusElement({ color: color ?? theme.palette.link })};
   ${asButton ? buttonStates : linkStates};
   color: ${({ theme }) => color ?? theme.palette.link};
 `;
 export const buttonStyles = ({ color }: StyledButtonProps) => css`
   ${mainElementBase};
   ${buttonHoverElement({ color })};
-  ${({ theme }) => focusElement({ color: color ?? theme.palette.text })};
+  ${({ theme }) =>
+    focusElement({ color: color ?? theme.palette.text })};
   ${buttonStates};
   color: ${({ theme }) => color ?? theme.palette.text};
 `;

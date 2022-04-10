@@ -1,4 +1,10 @@
 import React, { FC } from 'react';
+import {
+  RiH1,
+  RiH2,
+  RiListUnordered,
+  RiParagraph,
+} from 'react-icons/ri';
 import styled from 'styled-components';
 
 const Span = styled.span<{ offset?: string }>`
@@ -17,10 +23,21 @@ const Span = styled.span<{ offset?: string }>`
   }
 `;
 
-export const TagPrefix: FC<{ offset?: string }> = ({ children, offset }) => {
+const tags = {
+  h1: RiH1,
+  h2: RiH2,
+  ul: RiListUnordered,
+  p: RiParagraph,
+};
+
+export const TagPrefix: FC<{
+  offset?: string;
+  tag: keyof typeof tags;
+}> = ({ offset, tag }) => {
+  const Tag = tags[tag];
   return (
     <Span offset={offset} aria-hidden="true">
-      {children}
+      <Tag />
     </Span>
   );
 };
