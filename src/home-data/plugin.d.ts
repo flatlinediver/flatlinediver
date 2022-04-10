@@ -1,1 +1,2 @@
-declare module 'sectionize-by-hr';
+declare module 'thematic-break';
+declare module 'paragraph';

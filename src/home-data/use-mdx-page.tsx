@@ -6,19 +6,7 @@ import { HomeWrapper } from '@ui/home-wrapper';
 import { TagPrefix } from '@ui/tag-prefix';
 import { Social, socialIcons } from '@ui/social';
 import { Link } from '@ui/custom-link';
-
-const isBanner = (children: React.ReactNode) => {
-  const firstChild = React.Children.toArray(children)[0];
-  if (
-    firstChild !== null &&
-    typeof firstChild === 'object' &&
-    'props' in firstChild &&
-    'src' in firstChild.props &&
-    firstChild.props.src === 'public/images/flatlinediver.png'
-  ) {
-    return true;
-  }
-};
+import { LastNote } from '@ui/last-note';
 
 const ListItem = styled.li`
   list-style: none;
@@ -70,11 +58,15 @@ export const useMDXPage = (code: string) => {
               {children}
             </ListItem>
           ),
-          p: ({ children }) => {
-            if (isBanner(children)) {
-              return <></>;
+          p: ({ children, ...props }) => {
+            if ('lastNote' in props) {
+              return (
+                <LastNote>
+                  <TagPrefix tag="p" />
+                  {children}
+                </LastNote>
+              );
             }
-
             return (
               <p>
                 <TagPrefix tag="p" />

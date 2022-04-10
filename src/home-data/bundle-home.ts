@@ -1,6 +1,7 @@
 import path from 'path';
 import { bundleMDX as bundle } from 'mdx-bundler';
-import { sectionizeByHR } from '@home-data/sectionize-by-hr';
+import { thematicBreakLayout } from '@home-data/thematic-break';
+import { paragraph } from '@home-data/paragraph';
 
 export const bundlePage = async (): Promise<{ code: string }> => {
   const { code } = await bundle({
@@ -13,7 +14,8 @@ export const bundlePage = async (): Promise<{ code: string }> => {
     mdxOptions(options) {
       options.remarkPlugins = [
         ...(options.remarkPlugins ?? []),
-        sectionizeByHR,
+        ...thematicBreakLayout,
+        ...paragraph,
       ];
 
       return options;

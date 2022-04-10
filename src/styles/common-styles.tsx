@@ -36,7 +36,7 @@ const linkHoverElement = ({ color }: StyledLinkProps) => css`
   &:before {
     ${actionElementBase};
     top: 100%;
-    left: 1rem;
+    left: 0;
     width: 100%;
     height: 2px;
     background: ${({ theme }) => color ?? theme.palette.link};
