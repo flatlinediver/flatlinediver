@@ -17,7 +17,7 @@ const StyledMain = styled.main`
   }
 `;
 
-function NotFound() {
+function Custom404() {
   return (
     <>
       <Head>404 - Page Not Found</Head>
@@ -38,4 +38,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default Custom404;
