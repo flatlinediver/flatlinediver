@@ -12,13 +12,12 @@ const mainElementBase = css`
   position: relative;
   border-radius: 0.3rem;
   background: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   font-size: 1.5rem;
   width: max-content;
-  padding: 0.2rem;
   cursor: pointer;
 `;
 const actionElementBase = css`
@@ -35,10 +34,10 @@ const actionElementBase = css`
 const linkHoverElement = ({ color }: StyledLinkProps) => css`
   &:before {
     ${actionElementBase};
-    top: 100%;
+    top: calc(100% - 2px);
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 1px;
     background: ${({ theme }) => color ?? theme.palette.link};
   }
 `;
@@ -93,13 +92,13 @@ const linkStates = css`
 const buttonStates = css`
   &:hover {
     &:before {
-      opacity: 0.2;
+      opacity: 0.1;
     }
   }
   &:focus {
     border: none;
     &:before {
-      opacity: 0.2;
+      opacity: 0.1;
     }
     &:after {
       opacity: 1;
@@ -107,6 +106,9 @@ const buttonStates = css`
   }
   &:focus:not(:focus-visible) {
     &:after {
+      opacity: 0;
+    }
+    &:before {
       opacity: 0;
     }
   }
@@ -117,6 +119,7 @@ export const linkStyles = ({
   asButton,
 }: StyledLinkProps) => css`
   ${mainElementBase};
+  ${asButton && `padding: .2rem`};
   ${asButton
     ? buttonHoverElement({ color })
     : linkHoverElement({ color })};
@@ -132,4 +135,5 @@ export const buttonStyles = ({ color }: StyledButtonProps) => css`
     focusElement({ color: color ?? theme.palette.text })};
   ${buttonStates};
   color: ${({ theme }) => color ?? theme.palette.text};
+  padding: 0.2rem;
 `;

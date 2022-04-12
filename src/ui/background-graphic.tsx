@@ -12,7 +12,7 @@ const Wrapper = styled.div`
     fill: ${({ theme }) =>
       theme.mode === 'light'
         ? theme.baseColors.grey[300]
-        : theme.baseColors.grey[600]};
+        : theme.baseColors.grey[1000]};
   }
   @media (max-width: 1124px) {
     opacity: 0.05;

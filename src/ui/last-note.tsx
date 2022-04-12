@@ -5,7 +5,6 @@ const Paragraph = styled.p`
   font-size: 0.8rem;
   a {
     font-size: 0.8rem;
-    display: inline;
     padding: 0;
   }
 `;
