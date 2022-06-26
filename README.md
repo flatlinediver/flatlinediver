@@ -2,7 +2,7 @@
 
 # Hi, I&rsquo;m Eric
 
-A web/app developer, ocasionally designer.
+A web/app developer and designer.
 
 Here I host demos and side projects for now.
 
