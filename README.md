@@ -2,7 +2,7 @@
 
 # Hi, I&rsquo;m Eric
 
-A web/app developer from Argentina, now based in Georgia.
+A web/app developer, ocasionally designer.
 
 Here I host demos and side projects for now.
 
